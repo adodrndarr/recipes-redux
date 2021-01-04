@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success" (click)="onNewRecipe()">New Recipe</button>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-xs-12" *ngIf="recipes">
+        <app-recipe-item         
+            *ngFor="let recipeEl of recipes; let i = index"   
+            [recipe]="recipeEl"
+            [index]="i"
+        >
+        </app-recipe-item>      
+    </div>
+    <h2 *ngIf="!recipes || recipes.length === 0">No recipes available, add one to start your Recipe Adventure!</h2>  
+</div>
